@@ -144,6 +144,16 @@ impl DirectedAcyclicGraph {
         total as f64 / self.nodes.len() as f64
     }
 
+    /// Average out-reference per node
+    pub fn avg_out_ref(&self) -> f64 {
+        let mut total = 0;
+        for node in self.nodes() {
+            total += self.edges().iter().filter(|(from, _)| *from == *node).count();
+        }
+
+        total as f64 / self.nodes.len() as f64
+    }
+
     /// Longest depth
     pub fn max_depth(&self) -> usize {
         let mut max = 0;

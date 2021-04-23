@@ -12,6 +12,7 @@ fn main() -> Result<(), Box<dyn std::error::Error + 'static + Send + Sync>> {
     println!("AVG DAG DEPTH: {:.2}", dag.avg_depth());
     println!("AVG NODES PER DEPTH: {:.2}", dag.avg_node_per_depth());
     println!("AVG REF: {:.3}", dag.avg_ref());
+    println!("AVG OUT REF: {:.3}", dag.avg_out_ref());
     println!("MAX DEPTH: {}", dag.max_depth());
 
     Ok(())
